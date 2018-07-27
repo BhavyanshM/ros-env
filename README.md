@@ -2,5 +2,5 @@
 
 ## Currently supports ros-kinetic on Docker
 
-## Author: Bhavyansh Mishra
-## Courtesy: Taihú Pire
+Author: Bhavyansh Mishra
+Courtesy: Taihú Pire
