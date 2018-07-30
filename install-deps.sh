@@ -29,7 +29,7 @@ git clone https://github.com/laurentkneip/opengv.git && cd opengv/ && \
         mkdir build && cd build && cmake ../ && make && make install && \
         cd ../../ && rm -rf opengv/
 
-rm -rf /usr/src/gtest/build && mkdir /usr/src/gtest/build && cmake /usr/src/gtest -DBUILD_SHARED_LIBS=ON && make /usr/src/gtest/build && cp /usr/src/gtest/build/*.so /usr/lib
+rm -rf /usr/src/gtest/build && mkdir /usr/src/gtest/build && cd /usr/src/gtest/build && cmake .. -DBUILD_SHARED_LIBS=ON && make && cd - && cp /usr/src/gtest/build/*.so /usr/lib
 
 
 # Building the S-PTAM source code use one of the following two options:
