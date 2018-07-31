@@ -1,13 +1,13 @@
 #!/bin/bash
 
-IMAGE_TAG=sptam:latest
+IMAGE_TAG=kinetic:latest
 
 # Assume dense_sptam node is inside a catkin workspace
 CATKIN_WS_DIR=$PWD/../../
 
 case "$1" in
   run)
-    docker run -it \
+    nvidia-docker run -it \
     --net=host \
     -v /etc/group:/etc/group:ro \
     -v /etc/passwd:/etc/passwd:ro \

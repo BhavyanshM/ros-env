@@ -35,8 +35,10 @@ RUN apt-get update && \
 	apt-get install -y python-catkin-tools && \
 	rm -rf /var/lib/apt/lists/*
 
+RUN apt-get update && apt-get -y install nano
+
 # Set ROS master URI as localhost is not found in /etc/hosts
-ENV ROS_MASTER_URI "http://127.0.0.1:11311"
+ENV ROS_MASTER_URI "http://10.6.192.14:11311"
 
 WORKDIR /usr/src/sptam
 
