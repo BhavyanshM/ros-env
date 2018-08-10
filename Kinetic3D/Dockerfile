@@ -46,6 +46,6 @@ RUN apt-get install -y python-rosinstall python-rosinstall-generator python-wsto
 # Set ROS master URI as localhost is not found in /etc/hosts
 ENV ROS_MASTER_URI "http://10.6.192.14:11311"
 
-WORKDIR /usr/src/sptam
+WORKDIR /usr/src/sptam/ros-env/Kinetic3D
 
-CMD ["/bin/bash"]
+CMD /bin/bash

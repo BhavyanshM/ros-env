@@ -7,7 +7,7 @@ CATKIN_WS_DIR=$PWD/../../
 
 case "$1" in
   run)
-    nvidia-docker run -it \
+    docker run -it \
     --privileged \
     --net=host \
     -v /etc/group:/etc/group:ro \

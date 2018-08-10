@@ -8,7 +8,7 @@
            $ roslaunch rtabmap_ros bumblebee.launch -->
   
   <arg name="pi/2" value="1.5707963267948966" />
-  <node pkg="tf" type="static_transform_publisher" name="camera_optical" args="0 0 0 -$(arg pi/2) 0 -$(arg pi/2) /camera_link /multisense/left_camera_optical_frame 100" />
+  <node pkg="tf" type="static_transform_publisher" name="camera_optical" args="0 0 0 -$(arg pi/2) 0 -$(arg pi/2) /camera_link /map 100" />
  
   <!-- Choose visualization -->
   <arg name="rtabmapviz"              default="false" /> 
@@ -82,5 +82,9 @@
     <arg name="odom_frame_id"           value="$(arg odom_frame_id)"/>   
     <arg name="odom_args"               value="$(arg rtabmap_args)"/>
   </include>
+
+  <node pkg="rtabmap_ros" type="map_assembler" name="map_assembler"  >
+    <remap from="mapData" to="rtabmap/mapData"/>    
+  </node>
 
 </launch>
